@@ -1,0 +1,64 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Navigation Login/Logout + Subscribe Route",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Add a login/logout control to the primary navigation using the existing Internet Identity hook, supporting both desktop and mobile layouts with a loading/disabled state.",
+      "acceptanceCriteria": [
+        "On desktop widths, a \"Log in\" button is visible in the header navigation when the user is not authenticated.",
+        "On desktop widths, a \"Log out\" button is visible in the header navigation when the user is authenticated.",
+        "On mobile widths (Sheet menu), the same login/logout control is accessible and usable.",
+        "Clicking \"Log in\" triggers the existing Internet Identity login flow (no custom auth added).",
+        "Clicking \"Log out\" clears the existing Internet Identity session via the existing provider/hook.",
+        "While authentication is initializing or in progress, the login/logout button shows a disabled/loading state to prevent double-click issues."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/AuthNavControl.tsx",
+          "operation": "create",
+          "description": "Create a reusable navigation auth control that uses the existing useInternetIdentity hook to render \"Log in\" or \"Log out\" based on whether an identity is present; disable/show loading text while initializing/logging-in; on logout, clear cached client data (e.g., via React Query client) to match the selected \"authorization\" component guidance. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/PrimaryNav.tsx",
+          "operation": "modify",
+          "description": "Compose the new AuthNavControl into both the desktop nav row and the mobile Sheet menu so it is visible and usable in both layouts; ensure the mobile menu closes after the user activates the control to avoid leaving the Sheet open. Verify the component's usage instructions before implementing."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Add a Subscribe button to the primary navigation (desktop and mobile) that navigates to a new static in-app subscription info page at /subscribe.",
+      "acceptanceCriteria": [
+        "On desktop widths, a \"Subscribe\" button is visible in the header navigation.",
+        "On mobile widths (Sheet menu), a \"Subscribe\" navigation item/button is visible and closes the Sheet after navigation.",
+        "A new route exists for subscription information (e.g., \"/subscribe\"), and it renders without errors.",
+        "The subscription page content is static and does not attempt to collect payment details or integrate with a payment provider.",
+        "Navigation to and from the subscription page works with the existing TanStack Router setup."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SubscribePage.tsx",
+          "operation": "create",
+          "description": "Create a static, school-friendly subscription information page (no payment/checkout, no forms collecting payment details) describing simple options and guidance on how to subscribe via approved channels."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register the new /subscribe route with the existing TanStack Router route tree and wire it to SubscribePage so it renders without errors."
+        },
+        {
+          "path": "frontend/src/components/PrimaryNav.tsx",
+          "operation": "modify",
+          "description": "Add a \"Subscribe\" navigation item/button in both the desktop navigation and mobile Sheet navigation, ensuring mobile navigation closes the Sheet after route navigation."
+        },
+        {
+          "path": "frontend/deployment/ROUTE_SMOKE_NAV.md",
+          "operation": "modify",
+          "description": "Extend the manual route smoke test checklist to include the new subscription route (/subscribe) and verifying navigation via both desktop and mobile menus."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "kind": "build_request",
+  "title": "Add Login and Subscription buttons to the navigation",
+  "projectName": "Navy Learning Hub",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Add an authentication control to the primary navigation that lets users log in and log out using the existing Internet Identity provider. The control must show a \"Log in\" button when the user is not authenticated and a \"Log out\" button when the user is authenticated, and it must work in both desktop and mobile navigation layouts.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "add a login button as well as a subsription button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On desktop widths, a \"Log in\" button is visible in the header navigation when the user is not authenticated.",
+        "On desktop widths, a \"Log out\" button is visible in the header navigation when the user is authenticated.",
+        "On mobile widths (Sheet menu), the same login/logout control is accessible and usable.",
+        "Clicking \"Log in\" triggers the existing Internet Identity login flow (no custom auth added).",
+        "Clicking \"Log out\" clears the existing Internet Identity session via the existing provider/hook.",
+        "While authentication is initializing or in progress, the login/logout button shows a disabled/loading state to prevent double-click issues."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Add a \"Subscribe\" button to the primary navigation that is available in both desktop and mobile navigation layouts. The button must navigate to a new in-app subscription information page/route (e.g., \"/subscribe\") that explains subscription options in a simple, static, school-friendly way (no payment processing).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-4"
+        ],
+        "quotes": [
+          "add a login button as well as a subsription button"
+        ]
+      },
+      "acceptanceCriteria": [
+        "On desktop widths, a \"Subscribe\" button is visible in the header navigation.",
+        "On mobile widths (Sheet menu), a \"Subscribe\" navigation item/button is visible and closes the Sheet after navigation.",
+        "A new route exists for subscription information (e.g., \"/subscribe\"), and it renders without errors.",
+        "The subscription page content is static and does not attempt to collect payment details or integrate with a payment provider.",
+        "Navigation to and from the subscription page works with the existing TanStack Router setup."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not edit any files under frontend/src/components/ui (shadcn components); compose them instead.",
+    "Do not modify immutable hook files (frontend/src/hooks/useInternetIdentity.ts(x), frontend/src/hooks/useActor.ts, frontend/src/main.tsx); use the existing exported hooks/APIs as-is.",
+    "Backend must remain a single Motoko actor; no additional backend services or external databases."
+  ],
+  "nonGoals": [
+    "Implementing actual subscription payments (e.g., Stripe) or any checkout flow.",
+    "Adding third-party authentication beyond the existing Internet Identity integration.",
+    "Adding a backend subscription state model unless explicitly requested later."
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-16T15:49:31.344Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 2,
+    "implemented": 2,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Add an authentication control to the primary navigation that lets users log in and log out using the existing Internet Identity provider. The control must show a \"Log in\" button when the user is not authenticated and a \"Log out\" button when the user is authenticated, and it must work in both desktop and mobile navigation layouts.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/AuthNavControl.tsx",
+          "frontend/src/components/PrimaryNav.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/AuthNavControl.tsx",
+          "frontend/src/components/PrimaryNav.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Add a \"Subscribe\" button to the primary navigation that is available in both desktop and mobile navigation layouts. The button must navigate to a new in-app subscription information page/route (e.g., \"/subscribe\") that explains subscription options in a simple, static, school-friendly way (no payment processing).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/SubscribePage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/PrimaryNav.tsx",
+          "frontend/deployment/ROUTE_SMOKE_NAV.md"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/SubscribePage.tsx",
+          "frontend/src/App.tsx",
+          "frontend/src/components/PrimaryNav.tsx",
+          "frontend/deployment/ROUTE_SMOKE_NAV.md"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "build-request.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/deployment/ROUTE_SMOKE_NAV.md",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AuthNavControl.tsx",
+    "frontend/src/components/PrimaryNav.tsx",
+    "frontend/src/pages/SubscribePage.tsx",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}

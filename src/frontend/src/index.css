@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --radius: 0.5rem;
+        
+        /* Warm educational palette - charcoal, cream, and brass accents */
+        --background: 0.98 0.005 60;
+        --foreground: 0.25 0.015 60;
+        
+        --card: 1 0 0;
+        --card-foreground: 0.25 0.015 60;
+        
+        --popover: 1 0 0;
+        --popover-foreground: 0.25 0.015 60;
+        
+        /* Charcoal primary */
+        --primary: 0.30 0.020 240;
+        --primary-foreground: 0.98 0.005 60;
+        
+        /* Warm cream secondary */
+        --secondary: 0.95 0.015 75;
+        --secondary-foreground: 0.30 0.020 240;
+        
+        --muted: 0.94 0.010 60;
+        --muted-foreground: 0.50 0.015 60;
+        
+        /* Brass accent */
+        --accent: 0.88 0.025 75;
+        --accent-foreground: 0.30 0.020 240;
+        
+        /* Muted red for destructive */
+        --destructive: 0.55 0.20 25;
+        --destructive-foreground: 0.98 0.005 60;
+        
+        --border: 0.88 0.010 60;
+        --input: 0.88 0.010 60;
+        --ring: 0.50 0.020 240;
+        
+        --chart-1: 0.65 0.15 200;
+        --chart-2: 0.70 0.12 150;
+        --chart-3: 0.60 0.18 30;
+        --chart-4: 0.55 0.20 280;
+        --chart-5: 0.75 0.10 100;
+    }
+
+    .dark {
+        --background: 0.18 0.015 240;
+        --foreground: 0.95 0.010 60;
+        
+        --card: 0.22 0.018 240;
+        --card-foreground: 0.95 0.010 60;
+        
+        --popover: 0.20 0.018 240;
+        --popover-foreground: 0.95 0.010 60;
+        
+        /* Light charcoal for dark mode */
+        --primary: 0.85 0.015 60;
+        --primary-foreground: 0.22 0.018 240;
+        
+        --secondary: 0.28 0.020 240;
+        --secondary-foreground: 0.95 0.010 60;
+        
+        --muted: 0.30 0.018 240;
+        --muted-foreground: 0.65 0.012 60;
+        
+        /* Brass accent for dark mode */
+        --accent: 0.75 0.08 65;
+        --accent-foreground: 0.22 0.018 240;
+        
+        --destructive: 0.60 0.22 25;
+        --destructive-foreground: 0.95 0.010 60;
+        
+        --border: 0.35 0.020 240;
+        --input: 0.35 0.020 240;
+        --ring: 0.70 0.015 60;
+        
+        --chart-1: 0.60 0.18 220;
+        --chart-2: 0.65 0.15 170;
+        --chart-3: 0.70 0.20 50;
+        --chart-4: 0.55 0.22 290;
+        --chart-5: 0.75 0.12 110;
+    }
+
+    * {
+        @apply border-border;
+    }
+    
+    body {
+        @apply bg-background text-foreground;
+        font-feature-settings: "rlig" 1, "calt" 1;
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        @apply font-bold tracking-tight;
+    }
+    
+    h1 {
+        @apply text-4xl;
+    }
+    
+    h2 {
+        @apply text-3xl;
+    }
+    
+    h3 {
+        @apply text-2xl;
+    }
+    
+    /* Enhanced focus states for accessibility */
+    *:focus-visible {
+        @apply outline-none ring-2 ring-ring ring-offset-2 ring-offset-background;
+    }
+    
+    /* Smooth transitions */
+    button, a, [role="button"] {
+        @apply transition-colors duration-200;
+    }
+}

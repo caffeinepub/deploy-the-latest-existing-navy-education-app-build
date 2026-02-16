@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "New project",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-add-an-authentication-control-to-the-primary-navigation-that-lets-users-log-in-and-log-out-using-the-existing-internet-identity-provider-the-control-must-show-a-log-in-button-when-the-user-is-not-authenticated-and-a-log-out-button-when-the-user-is-authenticated-and-it-must-work-in-both-desktop-and-mobile-navigation-layouts",
+      "title": "Add an authentication control to the primary navigation that lets users log in and log out using the existing Internet Identity provider. The control must show a \"Log in\" button when the user is not authenticated and a \"Log out\" button when the user is authenticated, and it must work in both desktop and mobile navigation layouts.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-subscribe-button-to-the-primary-navigation-that-is-available-in-both-desktop-and-mobile-navigation-layouts-the-button-must-navigate-to-a-new-in-app-subscription-information-page-route-e-g-subscribe-that-explains-subscription-options-in-a-simple-static-school-friendly-way-no-payment-processing",
+      "title": "Add a \"Subscribe\" button to the primary navigation that is available in both desktop and mobile navigation layouts. The button must navigate to a new in-app subscription information page/route (e.g., \"/subscribe\") that explains subscription options in a simple, static, school-friendly way (no payment processing).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Add a login button to the UI",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Add a subscription button to the UI",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "projectName": "Navy Learning Hub",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

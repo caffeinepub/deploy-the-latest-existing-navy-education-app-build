@@ -1,0 +1,47 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-add-an-authentication-control-to-the-primary-navigation-that-lets-users-log-in-and-log-out-using-the-existing-internet-identity-provider-the-control-must-show-a-log-in-button-when-the-user-is-not-authenticated-and-a-log-out-button-when-the-user-is-authenticated-and-it-must-work-in-both-desktop-and-mobile-navigation-layouts",
+      "featureTitle": "Add an authentication control to the primary navigation that lets users log in and log out using the existing Internet Identity provider. The control must show a \"Log in\" button when the user is not authenticated and a \"Log out\" button when the user is authenticated, and it must work in both desktop and mobile navigation layouts.",
+      "files": [
+        "frontend/src/components/AuthNavControl.tsx",
+        "frontend/src/components/PrimaryNav.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-subscribe-button-to-the-primary-navigation-that-is-available-in-both-desktop-and-mobile-navigation-layouts-the-button-must-navigate-to-a-new-in-app-subscription-information-page-route-e-g-subscribe-that-explains-subscription-options-in-a-simple-static-school-friendly-way-no-payment-processing",
+      "featureTitle": "Add a \"Subscribe\" button to the primary navigation that is available in both desktop and mobile navigation layouts. The button must navigate to a new in-app subscription information page/route (e.g., \"/subscribe\") that explains subscription options in a simple, static, school-friendly way (no payment processing).",
+      "files": [
+        "frontend/deployment/ROUTE_SMOKE_NAV.md",
+        "frontend/src/App.tsx",
+        "frontend/src/components/PrimaryNav.tsx",
+        "frontend/src/pages/SubscribePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0",
+        "authorization@4.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

@@ -1,2 +1,3 @@
-# deploy-the-latest-existing-navy-education-app-build
-Exported from Caffeine project: Deploy the latest existing Navy education app build
+## 
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

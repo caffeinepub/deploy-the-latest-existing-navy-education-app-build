@@ -1,0 +1,65 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-16T15:49:31.341Z",
+  "summary": "REQ-2 (/subscribe route + Subscribe button) appears implemented in desktop nav and routed via TanStack Router. REQ-1 login/logout control is implemented as a reusable AuthNavControl with disabled/loading state, and used in desktop nav; mobile integration is indicated but the diff is truncated before showing the actual mobile AuthNavControl usage, so full REQ-1 mobile AC cannot be confirmed from provided evidence. Several unrelated branding/theme/deployment-doc changes were also made that were not requested.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Login/logout control must be accessible and usable in the mobile (Sheet) navigation layout.",
+      "reason": "PrimaryNav.tsx is truncated right where the mobile auth control would be rendered (it shows an incomplete `<Auth`), so the diff summary does not provide enough evidence that AuthNavControl (or equivalent) is actually included and wired in the mobile menu.",
+      "evidence": [
+        "frontend/src/components/PrimaryNav.tsx (truncated at mobile auth section)"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Branding updates (site name/title/logo alt text) and using branding config across pages/layout.",
+      "reason": "BuildRequest only asked for login/logout and Subscribe navigation + /subscribe page; branding changes are unrelated.",
+      "evidence": [
+        "frontend-file-summaries.txt (branding references)",
+        "frontend/src/config/branding.ts",
+        "frontend/index.html",
+        "frontend/src/components/SiteLayout.tsx (mentioned in summaries)",
+        "frontend/src/pages/HomePage.tsx (mentioned in summaries)",
+        "frontend/src/pages/AboutPoliciesPage.tsx (mentioned in summaries)"
+      ]
+    },
+    {
+      "description": "Global style/theme changes (index.css OKLCH palette) and Tailwind config changes.",
+      "reason": "Not requested by REQ-1 or REQ-2; could be considered scope creep.",
+      "evidence": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js",
+        "frontend-file-summaries.txt"
+      ]
+    },
+    {
+      "description": "Added/updated deployment and smoke-test documentation files.",
+      "reason": "Not requested; BuildRequest is product UI behavior changes only.",
+      "evidence": [
+        "frontend/deployment/ROUTE_SMOKE_NAV.md",
+        "frontend/deployment/DEPLOYMENT_CHECKLIST.md",
+        "frontend/deployment/SMOKE_TEST_CORE_FLOWS.md (mentioned, truncated)"
+      ]
+    },
+    {
+      "description": "AuthNavControl clears the entire React Query cache on logout.",
+      "reason": "Not specified in REQ-1; additional behavior beyond 'clears the existing Internet Identity session'.",
+      "evidence": [
+        "frontend/src/components/AuthNavControl.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "frontend-file-summaries.txt",
+    "frontend/deployment/ROUTE_SMOKE_NAV.md",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AuthNavControl.tsx",
+    "frontend/src/components/PrimaryNav.tsx",
+    "frontend/src/pages/SubscribePage.tsx",
+    "project_state.json"
+  ]
+}
